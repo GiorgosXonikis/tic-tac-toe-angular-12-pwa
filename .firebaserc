@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tic-tac-toe-angular12-pwa": {
+      "hosting": {
+        "tic-tac-toe": [
+          "tic-tac-toe-angular12-pwa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tic-tac-toe-angular12-pwa"
+  }
+}
