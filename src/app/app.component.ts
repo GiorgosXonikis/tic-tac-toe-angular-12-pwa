@@ -17,8 +17,8 @@ export class AppComponent implements OnInit{
     }
 
     ngOnInit() {
-        this.workerService.calcCounter(0, (value: number) => {
-            return this.result = value;
+        this.workerService.calcCounter(this.result, (value: number) => {
+            this.result = value;
         });
     }
 

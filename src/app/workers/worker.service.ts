@@ -9,7 +9,7 @@ export class WorkerService {
     constructor(private appService: AppService) {
     }
 
-    calcCounter(initValue: number, updateCounter: (value: number) => void): void {
+    calcCounter(initValue: number, updateResult: (value: number) => void): void {
         if (typeof Worker !== 'undefined') {
             const worker = new Worker(new URL('./app.worker', import.meta.url));
             worker.postMessage(initValue);
@@ -18,7 +18,7 @@ export class WorkerService {
             worker.onmessage = ({data}) => this.appService.subject.next(data);
 
             /** Solution 2: pass the data through callback */
-            worker.onmessage = ({data}) => updateCounter(data);
+            worker.onmessage = ({data}) => updateResult(data);
         } else {
             console.warn('Web Workers are not supported in this environment.');
         }
