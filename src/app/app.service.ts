@@ -4,6 +4,6 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class AppService {
 
-    subject = new BehaviorSubject<number>(7);
+    subject = new BehaviorSubject<number>(0);
 
 }
